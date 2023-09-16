@@ -1,0 +1,770 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR"><head><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/theme.css.jsf?ln=primefaces-lattes"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/bootstrap.min.css.jsf?ln=css"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/bootstrap-responsive.css.jsf?ln=css"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/style-correct.css.jsf?ln=css"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/printlattes.css.jsf?ln=css" media="print"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/contrast.css.jsf?ln=css"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/primefaces.css.jsf?ln=primefaces"><link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/util.css.jsf?ln=css"><script type="text/javascript" src="/dgp/javax.faces.resource/jquery/jquery.js.jsf?ln=primefaces"></script><script type="text/javascript" src="/dgp/javax.faces.resource/primefaces.js.jsf?ln=primefaces"></script><script type="text/javascript" src="/dgp/javax.faces.resource/jquery/jquery-plugins.js.jsf?ln=primefaces"></script>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=8"><script type="text/javascript" src="/dgp/javax.faces.resource/asmSelect.js.jsf?ln=js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/bootstrap.js.jsf?ln=js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/html5.js.jsf?ln=js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/tooltip.js.jsf?ln=js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/script.js.jsf?ln=js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/util.js.jsf?ln=js"></script>
+	    <!-- Keycloak oAuth2 -->
+	    <script type="text/javascript" src="https://login.cnpq.br/auth/js/keycloak.js"></script><script type="text/javascript" src="/dgp/javax.faces.resource/keycloak-adapter.js.jsf?ln=js"></script><script type="text/javascript">
+	    	var acessoPublico = true;
+	    	
+	    	if (!acessoPublico) {
+		    	keycloakAdapter.checkSso({
+	                      url: 'https://login.cnpq.br/auth',
+	                      realm: 'cnpq',
+	                      clientId: 'dgp'
+	                  });
+            }
+	    </script><style>
+.text-core{position:relative;}
+.text-core .text-wrap{background:#fff;position:absolute;}
+.text-core .text-wrap textarea,.text-core .text-wrap input{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;border:1px solid #9daccc;outline:none;resize:none;position:absolute;z-index:1;background:none;overflow:hidden;margin:0;padding:3px 5px 4px 5px;white-space:nowrap;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;line-height:13px;height:auto;}
+
+.text-core .text-wrap .text-arrow{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;top:0;right:0;width:22px;height:22px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOAQMAAADHWqTrAAAAA3NCSVQICAjb4U/gAAAABlBMVEX///8yXJnt8Ns4AAAACXBIWXMAAAsSAAALEgHS3X78AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1MzmNZGAwAAABpJREFUCJljYEAF/xsY6hkY7BgYZBgYOFBkADkdAmFDagYFAAAAAElFTkSuQmCC") 50% 50% no-repeat;cursor:pointer;z-index:2;}
+
+.text-core .text-wrap .text-dropdown{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;position:absolute;z-index:3;background:#fff;border:1px solid #9daccc;width:100%;max-height:100px;padding:1px;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;display:none;overflow-x:hidden;overflow-y:auto;}
+.text-core .text-wrap .text-dropdown.text-position-below{margin-top:1px;}
+.text-core .text-wrap .text-dropdown.text-position-above{margin-bottom:1px;}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion{padding:3px 5px;cursor:pointer;}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion em{font-style:normal;text-decoration:underline;}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion.text-selected{color:#fff;background:#6d84b4;}
+
+.text-core .text-wrap .text-focus{-webkit-box-shadow:0px 0px 6px #6d84b4;-moz-box-shadow:0px 0px 6px #6d84b4;box-shadow:0px 0px 6px #6d84b4;position:absolute;width:100%;height:100%;display:none;}
+.text-core .text-wrap .text-focus.text-show-focus{display:block;}
+
+.text-core .text-wrap .text-prompt{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;width:100%;height:100%;margin:1px 0 0 2px;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;color:#c0c0c0;overflow:hidden;white-space:pre;}
+.text-core .text-wrap .text-prompt.text-hide-prompt{display:none;}
+
+.text-core .text-wrap .text-tags{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;width:100%;height:100%;padding:3px 35px 3px 3px;cursor:text;}
+.text-core .text-wrap .text-tags.text-tags-on-top{z-index:2;}
+.text-core .text-wrap .text-tags .text-tag{float:left;}
+.text-core .text-wrap .text-tags .text-tag .text-button{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:relative;float:left;border:1px solid #9daccc;background:#e2e6f0;color:#000;padding:0px 17px 0px 3px;margin:0 2px 2px 0;cursor:pointer;height:16px;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove{position:absolute;right:3px;top:2px;display:block;width:11px;height:11px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAhCAYAAAAPm1F2AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAAQ5JREFUOI2dlD0WwiAQhCc8L6HHgAPoASwtSYvX8BrQxtIyveYA8RppLO1jE+LwE8lzms2yH8MCj1QoaBzH+VuUYNYMS213UlvDRamtUbXb5ZyPHuDoxwGgip3ipfvGuGzPz+vZ/coDONdzFuYCO6ramQQG0DJIE1oPBBvM6e9LqaS2FwD7FWwnVoIAsOc2Xn1jDlyd8pfPBRVOBHA8cc/3yCmQqt0jcY4LuTyAF3pOYS6wI48LAm4MUrx5JthgSQJAt5LtNgAUgEMBBIC3AL2xgo58dEPfhE9wygef89FtCeC49UwltR1pQrK2qr9vNr7uRTCBF3pOYS6wI4/zdQ8MUpxPI9hgSQL0Xyio/QBt54DzsHQx6gAAAABJRU5ErkJggg==") 0 0 no-repeat;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:hover{background-position:0 -11px;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:active{background-position:0 -22px;}
+</style></head><body>
+	
+	    <div>
+    
+    <style type="text/css">
+    	
+	   	#idFrmOpcoesAcessibilidade .icon-question-sign {
+		  background-position: -96px -96px;
+		}
+		
+		#idFrmOpcoesAcessibilidade [class^="icon-"], [class*=" icon-"] {
+		  display: inline-block;
+		  width: 14px;
+		  height: 14px;
+		  margin-top: 1px;
+		  line-height: 14px;
+		  vertical-align: text-top;
+		  background-repeat: no-repeat;
+		}
+		
+		#idFrmOpcoesAcessibilidade i, cite, em, var, address, dfn {
+		  font-style: italic;
+		}
+		
+		#idFrmOpcoesAcessibilidade .btn-group > .btn, .btn-group > .dropdown-menu {
+		  font-size: 14px;
+		}
+		
+		#idFrmOpcoesAcessibilidade .btn {
+		  display: inline-block;
+		  padding: 4px 14px;
+		  margin-bottom: 0;
+		  color: #333333;
+		  text-align: center;
+		  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+		  vertical-align: middle;
+		  cursor: pointer;
+		  background-color: #f5f5f5;
+		  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+		  background-repeat: repeat-x;
+		  border: 1px solid #bbbbbb;
+		  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+		  border-bottom-color: #a2a2a2;
+		  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+		
+		#idFrmOpcoesAcessibilidade a:-webkit-any-link {
+		  text-decoration: underline;
+		}
+		
+		#idFrmOpcoesAcessibilidade .btn-group {
+		  position: relative;
+		  white-space: nowrap;
+		  vertical-align: middle;
+		}
+		
+		#idFrmOpcoesAcessibilidade body {
+		  padding-bottom: 20px;
+		  padding-top: 90px;
+		}
+		
+		#idFrmOpcoesAcessibilidade body {
+		  margin: 0;
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  background-color: #ffffff;
+		}
+		
+		#idFrmOpcoesAcessibilidade a:hover, a:active {
+		  outline: 0;
+		}
+		
+		#idFrmOpcoesAcessibilidade .btn:hover {
+		  color: #333333;
+		  text-decoration: none;
+		  background-color: #e6e6e6;
+		  background-position: 0 -15px;
+		  -webkit-transition: background-position 0.1s linear;
+		  -moz-transition: background-position 0.1s linear;
+		  -o-transition: background-position 0.1s linear;
+		  transition: background-position 0.1s linear;
+		}
+    
+    </style>
+    
+    <script type="text/javascript">
+	
+		var contrast = false;
+
+        function maisFonte(){
+        	var tam = parseInt($('body').css('font-size'));
+        	tam = tam + 2;
+            $('body, p, span,label').animate({'font-size' : tam + 'px'});
+	    };
+
+	    function menosFonte(){
+	    	var tam = parseInt($('body').css('font-size'));
+        	tam = tam - 2;
+            $('body, p, span,label').animate({'font-size' : tam + 'px'});
+	    };
+		
+		function contraste(){
+			if(contrast){
+				$("body").removeClass('contrast');
+				contrast = false;
+			}else{
+				$("body").addClass('contrast');
+				contrast = true;
+			}
+	    };
+
+	</script>
+	
+	<div class="container">
+<form id="idFrmOpcoesAcessibilidade" name="idFrmOpcoesAcessibilidade" method="post" action="/dgp/espelhogrupo/33118" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="idFrmOpcoesAcessibilidade" value="idFrmOpcoesAcessibilidade">
+
+			<div class="logo-cnpq nav-collapse hidden-phone">
+				<a href="http://www.cnpq.br/" title="CNPq">
+					<h1>CNPq</h1>
+				</a>
+			</div>
+			<h2 class="nome-empresa hidden-phone">DI</h2>
+			<div class="acessibilidade btn-group pull-right">
+				<a class="btn" id="contrast" rel="tooltip" data-placement="botton" onclick="contraste();" data-original-title="Contraste">
+					<i class="icon-adjust"></i>
+				</a>
+				
+					<script>$('a[rel="tooltip"]').tooltip();</script> 
+					<a href="#" class="btn" rel="tooltip" data-placement="bottom" onclick="maisFonte();" data-original-title="Aumentar fonte">
+						<i class="icon-plus-sign"></i>
+					</a> 
+					<script>$('a[rel="tooltip"]').tooltip();</script> 
+					<a href="#" class="btn" rel="tooltip" data-placement="bottom" onclick="menosFonte();" data-original-title="Diminuir fonte">
+						<i class="icon-minus-sign"></i>
+					</a> 
+					<script>$('a[rel="tooltip"]').tooltip();</script> 
+					
+				<a href="http://lattes.cnpq.br/web/dgp/wiki/ " class="btn" rel="tooltip" target="_blank" data-original-title="Ajuda"><i class="icon-question-sign"></i> </a> 
+	
+			</div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-1723618920044823380:-9134303481836796769" autocomplete="off">
+</form>
+	</div>
+	    </div>
+	
+	    <div>
+            <div class="navbar">
+            	<div class="navbar-inner">
+	                <div class="container">
+	                </div>
+                </div>
+            </div>
+	    </div>
+	
+	    <div class="container">
+	        <div class="row-fluid">
+	            <div class="span12">
+			<!--MENU LATERAL-->
+			<div class="container">
+				<div class="row-fluid">
+
+					<!--MENU LATERAL-->
+					<div class="span3 telaVisualizar" id="testeMenu">
+						<div class="menuPainel bs-docs-sidenav affix-top" data-spy="affix" data-offset-top="150">
+							<ul class="nav nav-list bs-docs-sidenav">
+								<li>
+									<span class="label_vazio"></span>
+									<a href="#identificacao">Identificação 
+									</a>
+								</li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#endereco">Endereço / Contato
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#repercussao">Repercussões
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#linhaPesquisa">Linhas de pesquisa
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#recursosHumanos">Recursos humanos
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#instituicoesParceiras">Instituições parcerias
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#indicadores">Indicadores de RH
+										</a></li>
+									<li class="divisor menuItem"></li>
+									<li><span class="label_vazio"></span> <a href="#equipamentos_softwares">Equipamentos e Softwares
+										</a></li>
+							</ul>
+						</div>
+					</div><!--?xml version='1.0' encoding='UTF-8' ?-->
+<link type="text/css" rel="stylesheet" href="/dgp/javax.faces.resource/theme.css.jsf?ln=primefaces-lattes">
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=8"><script type="text/javascript" src="/dgp/javax.faces.resource/textExt.js.jsf?ln=js"></script>
+	    
+	    <!-- Keycloak oAuth2 -->
+	    <script type="text/javascript" src="https://login.cnpq.br/auth/js/keycloak.js"></script>
+	
+	
+		<div id="divConteudo" class="span9">
+<form id="idFormVisualizarGrupoPesquisa" name="idFormVisualizarGrupoPesquisa" method="post" action="/dgp/espelhogrupo/33118" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="idFormVisualizarGrupoPesquisa" value="idFormVisualizarGrupoPesquisa">
+
+				<div class="row-fluid">
+					<div id="tituloImpressao" class="ac">
+						<p> <strong>Grupo de pesquisa </strong> </p>
+					<h1 style="position: relative;">Adubação, Nutrição e Fisiologia de Plantas Estimuladas por Substâncias Húmicas e, ou, Bactérias Promotoras de Crescimento
+						<div style="float: right;">
+							<div style="position: absolute;"><div class="selo-grupo"><img id="idFormVisualizarGrupoPesquisa:j_idt88" src="/dgp/img/grupo_cert_pela_instituicao.png" alt=""></div>
+
+							</div>
+						</div>
+					</h1>
+				</div>
+				<div style="text-align: center !important;">Endereço para acessar este espelho: dgp.cnpq.br/dgp/espelhogrupo/5748476500273998
+				</div><div id="idFormVisualizarGrupoPesquisa:mensagensEspelhoRH" class="ui-messages ui-widget" aria-live="polite"></div>
+					
+					<div class="form-horizontal control-info box-form">
+						
+						<!-- Dados de Identificacao --><span class="">
+        
+    <div id="identificacao">
+    	<fieldset>
+    		<legend>Identificação 
+    		</legend>
+    		
+    		<div class="control-group"><label class="control-label">
+Situação do grupo:</label>
+	       		<div class="controls">Certificado
+	       		</div>
+	       	</div>
+    		
+    		<div class="control-group"><label class="control-label">
+Ano de formação:</label>
+	       		<div class="controls">2010
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Data da Situação:</label>
+	       		<div class="controls">11/09/2013 20:48
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Data do último envio:</label>
+	       		<div class="controls">04/07/2023 21:32
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Líder(es) do grupo:</label>
+	       		<div class="controls">Marihus Altoé Baldotto    
+			    		<br><br>Lílian Estrela Borges Baldotto    
+	       		</div>
+	       		
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Área predominante:</label>
+	       		<div class="controls">Ciências Agrárias; Agronomia
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Instituição do grupo:</label>
+	       		<div class="controls">Universidade Federal de Viçosa - UFV
+	       		</div>
+	       	</div>
+		       	<div class="control-group"><label class="control-label">
+Unidade:</label>
+		       		<div class="controls">Conselho de Ensino, Pesquisa e Extensão
+		       		</div>
+		        </div>       
+    	</fieldset>
+    	
+    	<!-- JANELA PARA ENVIO DE EMAIL --><div id="idFormVisualizarGrupoPesquisa:contatoDialogId" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow modal ui-draggable" role="dialog" aria-labelledby="idFormVisualizarGrupoPesquisa:contatoDialogId_title" aria-hidden="true" style="max-height: 801px; width: 700px; max-width: 562px; margin-left: -281px; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idFormVisualizarGrupoPesquisa:contatoDialogId_title" class="ui-dialog-title">Contato</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;"><span id="idFormVisualizarGrupoPesquisa:formularioContatoContainer" class="modal-body" style="height: auto; max-height: 661px;">
+				
+					<div class="control-group">
+						<label class="control-label">
+							<span title="Required" class="required">*</span>Email do remetente
+						</label>
+						<div class="controls"><input id="idFormVisualizarGrupoPesquisa:emailRemetenteInpuText" name="idFormVisualizarGrupoPesquisa:emailRemetenteInpuText" type="text" maxlength="255" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all span11" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"><div id="idFormVisualizarGrupoPesquisa:emailRemetenteInpuTextMsg" aria-live="polite"></div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">
+							<span title="Required" class="required">*</span>Assunto
+						</label>
+						<div class="controls"><input id="idFormVisualizarGrupoPesquisa:assuntoEmailInpuText" name="idFormVisualizarGrupoPesquisa:assuntoEmailInpuText" type="text" maxlength="255" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all span11" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"><div id="idFormVisualizarGrupoPesquisa:assuntoEmailInpuTextMsg" aria-live="polite"></div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">
+							<span title="Required" class="required">*</span>Descrição
+						</label>
+						<div class="controls"><textarea id="idFormVisualizarGrupoPesquisa:corpoEmailInpuText" name="idFormVisualizarGrupoPesquisa:corpoEmailInpuText" class="span11" rows="5" style="resize: none;"></textarea><div id="idFormVisualizarGrupoPesquisa:corpoEmailInpuTextMsg" aria-live="polite"></div>
+						</div>
+					</div></span>
+				
+				<div class="modal-footer"><button id="idFormVisualizarGrupoPesquisa:j_idt156" name="idFormVisualizarGrupoPesquisa:j_idt156" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn-primary ui-state-highlight" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt156',process:'idFormVisualizarGrupoPesquisa:formularioContatoContainer idFormVisualizarGrupoPesquisa:j_idt156',update:'idFormVisualizarGrupoPesquisa:formularioContatoContainer'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Enviar</span></button><button id="idFormVisualizarGrupoPesquisa:j_idt157" name="idFormVisualizarGrupoPesquisa:j_idt157" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt157',update:'idFormVisualizarGrupoPesquisa:formularioContatoContainer'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Limpar</span></button>
+				</div></div></div>
+    	
+    </div></span>
+						
+						<!-- Dados de Endereco --><span class="">
+    
+    <div id="endereco">
+    	<fieldset>
+    		<legend>Endereço / Contato</legend>
+    		
+    		<h4>Endereço</h4>
+    		
+    		<div class="control-group"><label class="control-label">
+Logradouro:</label>
+	       		<div class="controls">Rodovia LMG
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Número:</label>
+	       		<div class="controls">818  km 6
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Complemento:</label>
+	       		<div class="controls">Campus Florestal - CEDAF
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Bairro:</label>
+	       		<div class="controls">Campus Universitário
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+UF:</label>
+	       		<div class="controls">MG
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Localidade:</label>
+	       		<div class="controls">Florestal
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+CEP:</label>
+	       		<div class="controls">35690000
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Caixa Postal:</label>
+	       		<div class="controls">
+	       		</div>
+	       	</div>
+	       	
+	       	<h4>Localização geográfica
+	       	</h4>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Latitude:</label>
+	       		<div class="controls">-19.8885229
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Longitude:</label>
+	       		<div class="controls">-44.43217520000002
+	       		</div>
+	       	</div>
+	       	
+	       	<h4>Contato do grupo
+	       	</h4>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Telefone:</label>
+	       		<div class="controls">(31) 3536-3314
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Fax:</label>
+	       		<div class="controls">(31) 3536-3300
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Contato do grupo:</label>
+	       		<div class="controls"><a href="mailto:marihus@ufv.br" style="color: #0000FF; text-decoration: underline">marihus@ufv.br</a>
+	       		</div>
+	       	</div>
+	       	
+	       	<div class="control-group"><label class="control-label">
+Website:</label>
+	       		<div class="controls"><a href="www.caf.ufv.br/mcena" type="link" target="_blank">www.caf.ufv.br/mcena</a>
+	       		</div>
+	       	</div>
+	       	
+    	</fieldset>
+    </div></span>
+						
+						<!-- Dados de Repercussao --><span class="">
+    
+    <div id="repercussao">
+    	<fieldset>
+    	
+    		<legend>Repercussões
+    		</legend>
+    		
+    		<h4>Repercussões dos trabalhos do grupo</h4>
+    		
+    		<p>Espera-se, como repercussões do grupo de pesquisa, a geração de informações relevantes sobre o potencial de uso de ácidos húmicos e das bactérias promotoras de crescimento sobre as plantas, durante os períodos de enraizamento ou formação de mudas, aclimatização e estabelecimento no campo.  Caso as hipóteses científicas não sejam rejeitadas, estarão estabelecidas as doses de ácidos húmicos de máxima eficiência e as que possibilitem melhor forma de inóculo às plantas. Os ácidos húmicos e as bactérias promotoras de crescimento poderão, posteriormente, serem testados em escala comercial em substituição aos reguladores de crescimento existentes no mercado, como o ácido indol butírico. Esses resultados terão um impacto positivo na produção agropecuária sustentável do Estado de Minas Gerais, pois permitirão aos produtores incrementar a qualidade e em um menor tempo, devido aos efeitos dos ácidos húmicos e dos fitohormônios na aceleração do crescimento e desenvolvimento de plantas. 
+    		</p>
+    		
+    		<h4>Participação em redes de pesquisa</h4><div id="idFormVisualizarGrupoPesquisa:j_idt232" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt232_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt232:j_idt233" class="ui-state-default" role="columnheader" style="text-align:left;width:40%;word-break: normal;"><span>Rede de pesquisa </span></th><th id="idFormVisualizarGrupoPesquisa:j_idt232:j_idt236" class="ui-state-default" role="columnheader"><span>Website/Blog</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt232_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="2">Nenhum registro adicionado</td></tr></tbody></table></div></div>
+    		
+    	</fieldset>
+    </div></span>
+						
+						<!-- Dados de Linhas de Pesquisa --><span class="">
+    
+    <div id="linhaPesquisa">
+    	<fieldset>
+    		<legend>Linhas de pesquisa
+    		</legend><div id="idFormVisualizarGrupoPesquisa:j_idt247" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt247_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt247:j_idt248" class="ui-state-default" role="columnheader" style="text-align:left; width:60%"><span>Nome da linha de pesquisa</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt247:j_idt251" class="ui-state-default" role="columnheader" style="text-align:right; width:15%"><span>Quantidade de Estudantes</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt247:j_idt254" class="ui-state-default" role="columnheader" style="text-align:right; width:150%"><span>Quantidade de Pesquisadores</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt247:j_idt257" class="ui-state-default bt1 center no-print" role="columnheader" style="width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt247_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:60%">Adubação, Nutrição e Fisiologia de Plantas Estimuladas por Substâncias Húmicas e, ou, Bactérias Promotoras de Crescimento</td><td role="gridcell" style="text-align:right; width:15%">14</td><td role="gridcell" style="text-align:right; width:150%">12</td><td role="gridcell" style="width:10%" class="bt1 center no-print">
+<script type="text/javascript" src="/dgp/javax.faces.resource/jsf.js.jsf?ln=javax.faces"></script>
+<a id="idFormVisualizarGrupoPesquisa:j_idt247:0:idBtnVisualizarEspelhoLinhaPesquisa" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt247:0:idBtnVisualizarEspelhoLinhaPesquisa':'idFormVisualizarGrupoPesquisa:j_idt247:0:idBtnVisualizarEspelhoLinhaPesquisa'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt247:0:j_idt259" name="idFormVisualizarGrupoPesquisa:j_idt247:0:j_idt259" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt247:0:j_idt259'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div>
+    		
+    		
+    		
+    	</fieldset>
+    </div></span>
+						
+						<!-- Dados de Recursos Humanos --><span class="">
+    
+    <div id="recursosHumanos">
+    	<fieldset>
+    		<legend>Recursos humanos
+    		</legend><div id="idFormVisualizarGrupoPesquisa:j_idt267" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt267_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt267:j_idt268" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Pesquisadores</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt267:j_idt271" class="ui-state-default" role="columnheader" style="text-align:center;"><span>Titulação máxima</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt267:j_idt274" class="ui-state-default" role="columnheader" style="text-align:center; width:20%"><span>Data inclusão</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt267:j_idt278" class="ui-state-default bt1 center no-print" role="columnheader" style="width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt267_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Adilson de Castro Antônio</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">30/04/2016</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:0:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:0:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:0:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:0:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:0:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:0:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Gabriela Calvi Zeidan</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">04/07/2023</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:1:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:1:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:1:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:1:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:1:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:1:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Herminia Emilia Prieto Martinez</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:2:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:2:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:2:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:2:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:2:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:2:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Hygor Aristides Victor Rossoni</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">13/04/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:3:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:3:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:3:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:3:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:3:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:3:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Jader Galba Busato</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:4:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:4:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:4:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:4:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:4:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:4:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Leonardo Barros Dobbss</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:5:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:5:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:5:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:5:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:5:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:5:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="6" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Lessando Moreira Gontijo</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">13/05/2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:6:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:6:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:6:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:6:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:6:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:6:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="7" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Lílian Estrela Borges Baldotto</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:7:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:7:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:7:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:7:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:7:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:7:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="8" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Marcos Paiva Del Giudice</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:8:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:8:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:8:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:8:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:8:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:8:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="9" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Marihus Altoé Baldotto</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:9:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:9:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:9:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:9:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:9:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:9:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="10" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Raphael Oliveira de Melo</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:10:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:10:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:10:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:10:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:10:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:10:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="11" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Victor Hugo Alvarez Venegas</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt267:11:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:11:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt267:11:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt280" name="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt280" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt280'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt267:11:idBtnVisualizarEspelhoPesquisador" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt267:11:idBtnVisualizarEspelhoPesquisador':'idFormVisualizarGrupoPesquisa:j_idt267:11:idBtnVisualizarEspelhoPesquisador'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt282" name="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt282" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt282'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div><div id="idFormVisualizarGrupoPesquisa:j_idt284" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt284_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt284:j_idt285" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Estudantes</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt284:j_idt288" class="ui-state-default" role="columnheader" style="text-align:center;"><span>Nível de Treinamento</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt284:j_idt291" class="ui-state-default" role="columnheader" style="text-align:center; width:20%"><span>Data inclusão</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt284:j_idt295" class="ui-state-default bt1 center no-print" role="columnheader" style="width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt284_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Ana Flávia Mairinck Meirelles</td><td role="gridcell" style="text-align:center;">Não há formação em andamento</td><td role="gridcell" style="text-align:center; width:20%">22/09/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:0:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:0:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:0:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:0:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:0:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:0:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Antônio Augusto Gardingo de Aquino</td><td role="gridcell" style="text-align:center;">Graduação</td><td role="gridcell" style="text-align:center; width:20%">27/03/2020</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:1:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:1:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:1:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:1:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:1:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:1:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Bruna Mariane Diniz Alves</td><td role="gridcell" style="text-align:center;">Graduação</td><td role="gridcell" style="text-align:center; width:20%">22/09/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:2:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:2:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:2:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:2:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:2:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:2:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">David Fernando Fernandes Silva</td><td role="gridcell" style="text-align:center;">Graduação</td><td role="gridcell" style="text-align:center; width:20%">21/11/2018</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:3:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:3:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:3:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:3:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:3:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:3:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Henrique Queiroz Coelho</td><td role="gridcell" style="text-align:center;">Graduação</td><td role="gridcell" style="text-align:center; width:20%">21/11/2018</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:4:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:4:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:4:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:4:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:4:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:4:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Jorge Rodriguez Lozada</td><td role="gridcell" style="text-align:center;">Não há formação em andamento</td><td role="gridcell" style="text-align:center; width:20%">22/10/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:5:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:5:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:5:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:5:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:5:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:5:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="6" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Júlia Brandão Gontijo</td><td role="gridcell" style="text-align:center;">Pós-Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:6:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:6:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:6:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:6:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:6:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:6:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="7" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Klever Cristiano Silveira</td><td role="gridcell" style="text-align:center;">Não há formação em andamento</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:7:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:7:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:7:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:7:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:7:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:7:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="8" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Libério Junio da Silva</td><td role="gridcell" style="text-align:center;">Pós-Doutorado</td><td role="gridcell" style="text-align:center; width:20%">Anterior a abril de 2014</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:8:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:8:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:8:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:8:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:8:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:8:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="9" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Marina Mariá Pereira</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">22/09/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:9:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:9:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:9:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:9:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:9:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:9:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="10" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Mateus Portes Dutra</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">21/11/2018</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:10:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:10:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:10:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:10:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:10:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:10:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="11" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Murilo Rezende Zaparoli</td><td role="gridcell" style="text-align:center;">Não há formação em andamento</td><td role="gridcell" style="text-align:center; width:20%">21/11/2018</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:11:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:11:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:11:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:11:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:11:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:11:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="12" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Pamela de Lima Rocha</td><td role="gridcell" style="text-align:center;">Graduação</td><td role="gridcell" style="text-align:center; width:20%">22/09/2015</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:12:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:12:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:12:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:12:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:12:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:12:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="13" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Priscila Soares de Resende</td><td role="gridcell" style="text-align:center;">Doutorado</td><td role="gridcell" style="text-align:center; width:20%">22/01/2020</td><td role="gridcell" style="width:10%" class="bt1 center no-print"><a id="idFormVisualizarGrupoPesquisa:j_idt284:13:btnAcessoLattes2" href="#" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:13:btnAcessoLattes2':'idFormVisualizarGrupoPesquisa:j_idt284:13:btnAcessoLattes2'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt297" name="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt297" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt297'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-contact"></span><span class="ui-button-text ui-c">ui-button</span></button></a><a id="idFormVisualizarGrupoPesquisa:j_idt284:13:idBtnVisualizarEspelhoEstudante" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt284:13:idBtnVisualizarEspelhoEstudante':'idFormVisualizarGrupoPesquisa:j_idt284:13:idBtnVisualizarEspelhoEstudante'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt299" name="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt299" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt299'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div><div id="idFormVisualizarGrupoPesquisa:j_idt301" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt301_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt301:j_idt302" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Técnicos</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt301:j_idt305" class="ui-state-default" role="columnheader" style="text-align:center;"><span>Formação acadêmica</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt301:j_idt308" class="ui-state-default" role="columnheader" style="text-align:center; width:20%"><span>Data inclusão</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt301:j_idt312" class="ui-state-default bt1 center no-print" role="columnheader" style="width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt301_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="4">Nenhum registro adicionado</td></tr></tbody></table></div></div><div id="idFormVisualizarGrupoPesquisa:j_idt318" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt318_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt318:j_idt319" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Colaboradores estrangeiros</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt318:j_idt322" class="ui-state-default" role="columnheader"><span>País</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt318:j_idt325" class="ui-state-default" role="columnheader" style="text-align:center; width:20%"><span>Data inclusão</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt318:j_idt329" class="ui-state-default bt1 no-print center" role="columnheader" style="width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt318_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="4">Nenhum registro adicionado</td></tr></tbody></table></div></div>
+			
+			<h4>Egressos
+			</h4><div id="idFormVisualizarGrupoPesquisa:j_idt338" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt338_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt338:j_idt339" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Pesquisadores</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt338:j_idt344" class="ui-state-default" role="columnheader" style="text-align:center; width:30%"><span>Período de participação no grupo</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt338:j_idt347" class="ui-state-default bt1 no-print center" role="columnheader" style="text-align:center; width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt338_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">
+					<div align="left">Carlos Alberto de Oliveira
+					</div></td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 22/09/2015 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt338:0:idBtnVisualizarEspelhoPesquisadorEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt338:0:idBtnVisualizarEspelhoPesquisadorEgresso':'idFormVisualizarGrupoPesquisa:j_idt338:0:idBtnVisualizarEspelhoPesquisadorEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt338:0:j_idt349" name="idFormVisualizarGrupoPesquisa:j_idt338:0:j_idt349" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt338:0:j_idt349'});return false;" title="Visualizar dados do pesquisador." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">
+					<div align="left">Clarindo Inácio de Aparecida Queiroz
+					</div></td><td role="gridcell" style="text-align:center; width:30%">De 26/10/2014 a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt338:1:idBtnVisualizarEspelhoPesquisadorEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt338:1:idBtnVisualizarEspelhoPesquisadorEgresso':'idFormVisualizarGrupoPesquisa:j_idt338:1:idBtnVisualizarEspelhoPesquisadorEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt338:1:j_idt349" name="idFormVisualizarGrupoPesquisa:j_idt338:1:j_idt349" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt338:1:j_idt349'});return false;" title="Visualizar dados do pesquisador." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">
+					<div align="left">Daniel Basílio Zandonadi
+					</div></td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt338:2:idBtnVisualizarEspelhoPesquisadorEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt338:2:idBtnVisualizarEspelhoPesquisadorEgresso':'idFormVisualizarGrupoPesquisa:j_idt338:2:idBtnVisualizarEspelhoPesquisadorEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt338:2:j_idt349" name="idFormVisualizarGrupoPesquisa:j_idt338:2:j_idt349" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt338:2:j_idt349'});return false;" title="Visualizar dados do pesquisador." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">
+					<div align="left">Virginia Silva Carvalho
+					</div></td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt338:3:idBtnVisualizarEspelhoPesquisadorEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt338:3:idBtnVisualizarEspelhoPesquisadorEgresso':'idFormVisualizarGrupoPesquisa:j_idt338:3:idBtnVisualizarEspelhoPesquisadorEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt338:3:j_idt349" name="idFormVisualizarGrupoPesquisa:j_idt338:3:j_idt349" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt338:3:j_idt349'});return false;" title="Visualizar dados do pesquisador." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">
+					<div align="left">Wagner Campos Otoni
+					</div></td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt338:4:idBtnVisualizarEspelhoPesquisadorEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt338:4:idBtnVisualizarEspelhoPesquisadorEgresso':'idFormVisualizarGrupoPesquisa:j_idt338:4:idBtnVisualizarEspelhoPesquisadorEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt338:4:j_idt349" name="idFormVisualizarGrupoPesquisa:j_idt338:4:j_idt349" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt338:4:j_idt349'});return false;" title="Visualizar dados do pesquisador." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div><div id="idFormVisualizarGrupoPesquisa:j_idt350" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt350_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt350:j_idt351" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Estudantes</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt350:j_idt354" class="ui-state-default" role="columnheader" style="text-align:center; width:30%"><span>Período de participação no grupo</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt350:j_idt357" class="ui-state-default bt1 no-print center" role="columnheader" style="text-align:center; width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt350_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Alexandre Riva de Miranda</td><td role="gridcell" style="text-align:center; width:30%">De 22/09/2015 a 20/11/2018 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:0:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:0:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:0:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:0:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:0:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:0:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Amanda Cristina Gonçalves de Oliveira</td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 11/05/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:1:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:1:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:1:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:1:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:1:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:1:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Gabriely Moraes Reis</td><td role="gridcell" style="text-align:center; width:30%">De 21/10/2015 a 20/11/2018 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:2:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:2:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:2:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:2:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:2:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:2:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Gracielle Vidal Silva Andrade</td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 20/11/2018 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:3:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:3:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:3:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:3:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:3:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:3:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Jaíza Ellen Borges Cordeiro</td><td role="gridcell" style="text-align:center; width:30%">De 22/09/2015 a 20/11/2018 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:4:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:4:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:4:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:4:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:4:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:4:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Letícia de Melo Ferreira</td><td role="gridcell" style="text-align:center; width:30%">De 08/10/2016 a 06/11/2017 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:5:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:5:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:5:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:5:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:5:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:5:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="6" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Manuela Almeida Santos</td><td role="gridcell" style="text-align:center; width:30%">De 21/10/2015 a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:6:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:6:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:6:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:6:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:6:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:6:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="7" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Matheus Pereira Simões</td><td role="gridcell" style="text-align:center; width:30%">De Não informada a 22/09/2015 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:7:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:7:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:7:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:7:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:7:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:7:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="8" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Patrícia Matioli Ferreira</td><td role="gridcell" style="text-align:center; width:30%">De 11/05/2016 a 20/11/2018 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:8:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:8:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:8:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:8:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:8:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:8:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr><tr data-ri="9" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell" style="text-align:left; width:40%">Saullo Sérgio Carvalho Campos</td><td role="gridcell" style="text-align:center; width:30%">De 21/10/2015 a 08/10/2016 </td><td role="gridcell" style="text-align:center; width:10%" class="bt1 no-print center"><a id="idFormVisualizarGrupoPesquisa:j_idt350:9:idBtnVisualizarEspelhoEstudanteEgresso" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt350:9:idBtnVisualizarEspelhoEstudanteEgresso':'idFormVisualizarGrupoPesquisa:j_idt350:9:idBtnVisualizarEspelhoEstudanteEgresso'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt350:9:j_idt359" name="idFormVisualizarGrupoPesquisa:j_idt350:9:j_idt359" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt350:9:j_idt359'});return false;" title="Visualizar dados do estudante." type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div>
+    		
+    	</fieldset><div id="idFormVisualizarGrupoPesquisa:dialogHistorico" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow modal ui-draggable" role="dialog" aria-labelledby="idFormVisualizarGrupoPesquisa:dialogHistorico_title" aria-hidden="true" style="max-height: 801px; width: 700px; max-width: 562px; margin-left: -281px; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idFormVisualizarGrupoPesquisa:dialogHistorico_title" class="ui-dialog-title">Histórico de recursos humanos</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;">
+		<div class="modal-body" style="height: auto; max-height: 661px;">
+			<div class="control-group">
+				<div class="control-label"> Nome: </div>
+					<div class="controls">
+					</div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"> Nome do grupo: </div>
+					<div class="controls">Adubação, Nutrição e Fisiologia de Plantas Estimuladas por Substâncias Húmicas e, ou, Bactérias Promotoras de Crescimento
+					</div>
+			</div><div id="idFormVisualizarGrupoPesquisa:tabelaHistorico" class="ui-datatable ui-widget table table-bordered table-striped table-condensed table-hover"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:tabelaHistorico_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:tabelaHistorico:j_idt366" class="ui-state-default" role="columnheader" style="width: 40%; text-align:center;"><span>Perfil</span></th><th id="idFormVisualizarGrupoPesquisa:tabelaHistorico:j_idt369" class="ui-state-default" role="columnheader" style="width: 30%;text-align:center;"><span>Data início</span></th><th id="idFormVisualizarGrupoPesquisa:tabelaHistorico:j_idt372" class="ui-state-default" role="columnheader" style="width: 30%;text-align:center;"><span>Data fim</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:tabelaHistorico_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="3">Nenhum registro adicionado</td></tr></tbody></table></div><div id="idFormVisualizarGrupoPesquisa:tabelaHistorico_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom"><span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled" title="Primeira página"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled" title="Página anterior"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled" title="Próxima página"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled" title="Última página"><span class="ui-icon ui-icon-seek-end">p</span></span><select class="ui-paginator-rpp-options ui-widget ui-state-default ui-corner-left" value="10"><option value="10" selected="selected">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select><span class="ui-paginator-current">Total de registros: 0</span></div></div>
+	             </div>
+	
+		<div class="modal-footer"><button id="idFormVisualizarGrupoPesquisa:j_idt376" name="idFormVisualizarGrupoPesquisa:j_idt376" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-primary" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt376',oncomplete:function(xhr,status,args){dialogHistoricoVar.hide();;}});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Fechar</span></button>
+		</div></div></div>
+    </div></span>
+						
+						<!-- Dados de Redes e Programas -->
+						<!--   h:panelGroup rendered=&quot;false&quot;
+								styleClass=&quot;no-print&quot;&gt;
+							&lt;ui:include src=&quot;/faces/grupo/visualizar/visualizar_dados_redes_programas.xhtml&quot; /&gt;
+						&lt;/h:panelGroup -->
+						
+						<!-- Dados de Instituicoes Parceiras --><span class="">
+    
+    <div id="instituicoesParceiras">
+    	<fieldset>
+    		<legend>Instituições parceiras relatadas pelo grupo
+    		</legend><div id="idFormVisualizarGrupoPesquisa:j_idt384" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt384_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt384:j_idt385" class="ui-state-default" role="columnheader" style="text-align:left; width:40%"><span>Nome da Instituição Parceira</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt384:j_idt388" class="ui-state-default" role="columnheader" style="text-align:center"><span>Sigla</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt384:j_idt391" class="ui-state-default" role="columnheader" style="text-align:center"><span>UF</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt384:j_idt394" class="ui-state-default bt1" role="columnheader" style="text-align:center; width:10%"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt384_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell" style="text-align:left; width:40%">Empresa de Pesquisa Agropecuária de Minas Gerais</td><td role="gridcell" style="text-align:center">EPAMIG</td><td role="gridcell" style="text-align:center">MG</td><td role="gridcell" style="text-align:center; width:10%" class="bt1"><a id="idFormVisualizarGrupoPesquisa:j_idt384:0:visualizar" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormVisualizarGrupoPesquisa'),{'idFormVisualizarGrupoPesquisa:j_idt384:0:visualizar':'idFormVisualizarGrupoPesquisa:j_idt384:0:visualizar'},'_blank');return false"><button id="idFormVisualizarGrupoPesquisa:j_idt384:0:j_idt396" name="idFormVisualizarGrupoPesquisa:j_idt384:0:j_idt396" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btn-mini" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:j_idt384:0:j_idt396'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-battery-2"></span><span class="ui-button-text ui-c">ui-button</span></button></a></td></tr></tbody></table></div></div>
+    		
+    	</fieldset>
+    	
+    	
+    	
+    </div></span>
+						
+						<!-- Dados de Indicadores --><span class="">
+    
+    <div id="indicadores">
+    	<fieldset>
+    		<legend>Indicadores de recursos humanos do grupo
+    		</legend><div id="idFormVisualizarGrupoPesquisa:j_idt404" class="ui-datatable ui-widget table table-bordered table-condensed table-hover table-striped"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:j_idt404_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt405" class="ui-state-default" role="columnheader"><span>Formação acadêmica</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt408" class="ui-state-default textoDireita" role="columnheader"><span>Pesquisadores</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt411" class="ui-state-default textoDireita" role="columnheader"><span>Estudantes</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt414" class="ui-state-default textoDireita" role="columnheader"><span>Técnicos</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt417" class="ui-state-default textoDireita" role="columnheader"><span>Colaboradores estrangeiros</span></th><th id="idFormVisualizarGrupoPesquisa:j_idt404:j_idt420" class="ui-state-default textoDireita" role="columnheader"><span>Total</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:j_idt404_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell">Doutorado</td><td role="gridcell" class="textoDireita">12</td><td role="gridcell" class="textoDireita">5</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">17</td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell">Graduação</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">4</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">4</td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell">Outros</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">5</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">0</td><td role="gridcell" class="textoDireita">5</td></tr></tbody></table></div></div>
+    		
+    	</fieldset>
+    </div>
+    
+    <!--  p:panelGrid style=&quot;width: 100%;&quot;&gt;
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;h:outputText value=&quot;Doutorado&quot; /&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;h:outputText value=&quot;Mestrado&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;h:outputText value=&quot;Esp/Gradua&ccedil;&atilde;o&quot; /&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;h:outputText value=&quot;Outros	 &quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;h:outputText value=&quot;Total&quot; /&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    			
+    			
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column style=&quot;text-align:left;&quot;&gt;&lt;h:outputText value=&quot;Pesquisadores&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    			
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column style=&quot;text-align:left;&quot;&gt;&lt;h:outputText value=&quot;Estudantes&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    			
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column style=&quot;text-align:left;&quot;&gt;&lt;h:outputText value=&quot;T&eacute;cnicos&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    			
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column style=&quot;text-align:left;&quot;&gt;&lt;h:outputText value=&quot;Colaboradores Estrangeiros&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    			
+    			&lt;f:facet name=&quot;header&quot;&gt;
+    				&lt;p:row&gt;
+						&lt;p:column style=&quot;text-align:left;&quot;&gt;&lt;h:outputText value=&quot;Total&quot; /&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    					&lt;p:column&gt;&lt;/p:column&gt;    				
+    					&lt;p:column&gt;&lt;/p:column&gt;
+    				&lt;/p:row&gt;	
+    			&lt;/f:facet&gt;
+    		
+    		&lt;/p:panelGrid --></span>
+						
+						<!-- Dados de Equipamentos/Software --><span class="no-print">
+    
+    <div id="equipamentos_softwares">
+    	<fieldset>
+    		<legend>Equipamentos e Softwares Relevantes
+    		</legend>
+    		
+    		<p align="justify"><b>O grupo de pesquisa possui equipamentos de P&amp;D próprios e que não fazem parte de laboratório/infraestrutura de pesquisa da instituição, com valor superior a R$100 mil?</b> 
+    			Não
+    		</p><div id="idFormVisualizarGrupoPesquisa:listaEquipamento" class="ui-datatable ui-widget table table-bordered table-striped table-condensed table-hover"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:listaEquipamento_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:listaEquipamento:j_idt429" class="ui-state-default" role="columnheader"><span>Equipamentos</span></th><th id="idFormVisualizarGrupoPesquisa:listaEquipamento:j_idt432" class="ui-state-default" role="columnheader" style="width: 90px;"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:listaEquipamento_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="2">Nenhum registro adicionado</td></tr></tbody></table></div></div>
+			
+			<p align="justify"><b>O grupo de pesquisa possui softwares utilizados nas atividades de P&amp;D?</b> 
+    			Não  
+    		</p><div id="idFormVisualizarGrupoPesquisa:listaSoftware" class="ui-datatable ui-widget table table-bordered table-striped table-condensed table-hover"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormVisualizarGrupoPesquisa:listaSoftware_head"><tr role="row"><th id="idFormVisualizarGrupoPesquisa:listaSoftware:j_idt436" class="ui-state-default" role="columnheader"><span>Softwares</span></th><th id="idFormVisualizarGrupoPesquisa:listaSoftware:j_idt439" class="ui-state-default" role="columnheader" style="width: 90px;"><span>Ações</span></th></tr></thead><tfoot></tfoot><tbody id="idFormVisualizarGrupoPesquisa:listaSoftware_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="2">Nenhum registro adicionado</td></tr></tbody></table></div></div>
+    		
+    	</fieldset>
+    </div><div id="idFormVisualizarGrupoPesquisa:modalVisualizarEquipamento" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow ui-draggable" role="dialog" aria-labelledby="idFormVisualizarGrupoPesquisa:modalVisualizarEquipamento_title" aria-hidden="true" style="width: 600px; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idFormVisualizarGrupoPesquisa:modalVisualizarEquipamento_title" class="ui-dialog-title">Equipamento</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;">
+				<div class="modal-body">
+					<div class="span12">
+						<p align="justify">
+							<b>Classificação</b>
+							
+						</p>
+						<p align="justify">
+							<b>Nome do equipamento</b>
+							
+						</p>
+						<p align="justify">
+							<b>Marca</b>
+							
+						</p>
+						<p align="justify">
+							<b>Modelo</b>
+							
+						</p>
+						<p align="justify">
+							<b>Especificações</b>
+							
+						</p>
+						<p align="justify">
+							<b>Custo da aquisição (ou fabricação) em R$ ou US$</b> US$
+						</p>
+						<p align="justify">
+							<b>Entidade financeira </b>
+						</p>
+						<p align="justify">
+							<b>Estado do equipamento em Dez. do ano anterior</b>
+							
+						</p>
+						<p align="justify">
+							<b>Equipamento com desenvolvimento ou fabricação própria?</b>
+						</p>
+						<p align="justify">
+							<b>Concorda em disponibilizar esse software para uso por outros pesquisadores mediante agendamento prévio não compulsório?</b>
+						</p>
+					</div>
+				</div>
+				
+				<div class="modal-footer"><button id="idFormVisualizarGrupoPesquisa:j_idt473" name="idFormVisualizarGrupoPesquisa:j_idt473" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn-primary ui-state-highlight" onclick="modalVisualizarEquipamentoVar.hide();;" type="button" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Fechar</span></button>
+				</div></div></div><div id="idFormVisualizarGrupoPesquisa:modalVisualizarSoftware" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow ui-draggable" role="dialog" aria-labelledby="idFormVisualizarGrupoPesquisa:modalVisualizarSoftware_title" aria-hidden="true" style="width: 600px; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idFormVisualizarGrupoPesquisa:modalVisualizarSoftware_title" class="ui-dialog-title">Softwares</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;">
+				<div class="modal-body">
+					<div class="span12">
+						<p align="justify">
+							<b>Tipo de licenciamento</b>
+							
+						</p>
+						<p align="justify">
+							<b>Classificação</b>
+							
+						</p>
+						<p align="justify">
+							<b>Nome</b>
+							
+						</p>
+						<p align="justify">
+							<b>Versão</b>
+							
+						</p>
+						<p align="justify">
+							<b>Fabricante</b>
+							
+						</p>
+						<p align="justify">
+							<b>Especificações</b>
+							
+						</p>
+						<p align="justify">
+							<b>Custo de licenciamento em R$ ou US$</b> 
+							
+						</p>
+						<p align="justify">
+							<b>Entidade financeira </b>
+						</p>
+						<p align="justify">
+							<b>Concorda em disponibilizar esse software para uso por outros pesquisadores mediante agendamento prévio não compulsório?</b>
+						</p>
+					</div>
+				</div>
+				
+				<div class="modal-footer"><button id="idFormVisualizarGrupoPesquisa:j_idt486" name="idFormVisualizarGrupoPesquisa:j_idt486" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn-primary ui-state-highlight" onclick="modalVisualizarSoftwareVar.hide();;" type="button" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Fechar</span></button>
+				</div></div></div></span>
+						
+						<div class="form-actions no-print"><button id="idFormVisualizarGrupoPesquisa:btnImprimir" name="idFormVisualizarGrupoPesquisa:btnImprimir" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn btn-primary ui-state-highlight" onclick="PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:btnImprimir',oncomplete:function(xhr,status,args){idModalImprimirGrupoPesquisaVar.show(); desabilitarClickLinhaTabela('idFormImprimirGrupoPesquisa', 'tblSelecaoImpressao');;}});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-print"></span><span class="ui-button-text ui-c">Imprimir</span></button><button id="idFormVisualizarGrupoPesquisa:btnFechar" name="idFormVisualizarGrupoPesquisa:btnFechar" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn" onclick="window.close();;PrimeFaces.ab({source:'idFormVisualizarGrupoPesquisa:btnFechar'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-circle-arrow-w"></span><span class="ui-button-text ui-c">Fechar</span></button>
+						</div>
+	
+					</div>
+					
+					
+				</div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-1723618920044823380:-9134303481836796769" autocomplete="off">
+</form><div id="idModalImprimirGrupoPesquisa" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow ui-draggable" role="dialog" aria-labelledby="idModalImprimirGrupoPesquisa_title" aria-hidden="true" style="width: 310px; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idModalImprimirGrupoPesquisa_title" class="ui-dialog-title">Imprimir</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;"><div id="idMsgModalImpressaoGP" class="ui-messages ui-widget" aria-live="polite"></div>
+<form id="idFormImprimirGrupoPesquisa" name="idFormImprimirGrupoPesquisa" method="post" action="/dgp/espelhogrupo/33118" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="idFormImprimirGrupoPesquisa" value="idFormImprimirGrupoPesquisa">
+
+			<div class="modal-body"><div id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_head"><tr role="row"><th id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao:j_idt491" class="ui-state-default ui-selection-column" role="columnheader" style="width:18px"><span></span><div class="ui-chkbox ui-chkbox-all ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-icon ui-icon-check"></span></div></div></th><th id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao:j_idt492" class="ui-state-default" role="columnheader"><span>Itens</span></th></tr></thead><tfoot></tfoot><tbody id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" data-rk="identificacao" class="ui-widget-content ui-datatable-even ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Identificação</td></tr><tr data-ri="1" data-rk="endereco" class="ui-widget-content ui-datatable-odd ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Endereço</td></tr><tr data-ri="2" data-rk="repercussao" class="ui-widget-content ui-datatable-even ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Repercussões dos trabalhos</td></tr><tr data-ri="3" data-rk="linhapesquisa" class="ui-widget-content ui-datatable-odd ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Linhas de pesquisa</td></tr><tr data-ri="4" data-rk="recursoshumanos" class="ui-widget-content ui-datatable-even ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Recursos humanos</td></tr><tr data-ri="5" data-rk="indicadores" class="ui-widget-content ui-datatable-odd ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Indicadores de RH</td></tr><tr data-ri="6" data-rk="instituicoesparceiras" class="ui-widget-content ui-datatable-even ui-state-highlight" role="row" aria-selected="true"><td role="gridcell" style="width:18px" class="ui-selection-column"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_checkbox"></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-c ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div></td><td role="gridcell">Instituições de parcerias</td></tr></tbody></table></div><input type="hidden" id="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_selection" name="idFormImprimirGrupoPesquisa:tblSelecaoImpressao_selection" autocomplete="off" value="identificacao,endereco,repercussao,linhapesquisa,recursoshumanos,indicadores,instituicoesparceiras"></div>
+				
+			</div>
+			
+			<div class="modal-footer"><button id="idFormImprimirGrupoPesquisa:j_idt496" name="idFormImprimirGrupoPesquisa:j_idt496" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn-primary ui-state-highlight" onclick="PrimeFaces.ab({source:'idFormImprimirGrupoPesquisa:j_idt496',update:'idFormVisualizarGrupoPesquisa',global:false});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-print"></span><span class="ui-button-text ui-c">Imprimir</span></button>
+            </div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-1723618920044823380:-9134303481836796769" autocomplete="off">
+</form></div></div>
+		</div>
+	
+
+
+
+				</div>
+			</div>
+	           </div>
+	       </div>
+	    </div>
+	
+	
+	    <div class="cnpq-layout-rodape layout-cell layout-cell-18">&nbsp;
+	    </div>
+<form id="j_idt505" name="j_idt505" method="post" action="/dgp/espelhogrupo/33118" enctype="application/x-www-form-urlencoded" style="display: none">
+<input type="hidden" name="j_idt505" value="j_idt505">
+<script type="text/javascript">autorizacaoRequestJSF = function() {PrimeFaces.ab({source:'j_idt506',formId:'j_idt505',params:arguments[0]});}</script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-1723618920044823380:-9134303481836796769" autocomplete="off">
+</form>
+	
+	<script type="text/javascript">
+		function correcaoHintsPaginacaoDatatables(){
+			inseriHintPaginacaoDatatables("Primeira página",
+										  "Última página",
+										  "Página anterior",
+										  "Próxima página");
+		}
+
+		correcaoHintsPaginacaoDatatables();
+	</script>
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div><div id="bg_backtoTop" style="display: none;"><div id="back-top"><a href="#top" title="Voltar para o topo"><span></span></a></div></div><div id="idFormVisualizarGrupoPesquisa:j_idt127" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Permite enviar email</div><div class="ui-dialog-docking-zone"></div><div id="idFormVisualizarGrupoPesquisa:j_idt247:0:j_idt260" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho da linha de pesquisa</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:0:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:1:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:2:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:3:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:4:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:5:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:6:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:7:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:8:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:9:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:10:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt281" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt267:11:j_idt283" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do pesquisador</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:0:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:1:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:2:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:3:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:4:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:5:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:6:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:7:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:8:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:9:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:10:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:11:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:12:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt298" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar Currículo Lattes</div><div id="idFormVisualizarGrupoPesquisa:j_idt284:13:j_idt300" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho do estudante</div><div id="idFormVisualizarGrupoPesquisa:j_idt384:0:j_idt397" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all">Visualizar espelho da instituição parceira</div></body></html>

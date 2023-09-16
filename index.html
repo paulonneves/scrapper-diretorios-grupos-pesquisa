@@ -1,0 +1,926 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<partial-response><changes><update id="j_idt47"><![CDATA[<script id="j_idt48_s" type="text/javascript">$(function(){PrimeFaces.cw('Effect','widget_j_idt48',{id:'j_idt48',source:'j_idt47',event:'click',delay:0,fn:function(){$(PrimeFaces.escapeClientId('j_idt47')).effect('fade',{},1000);}});});</script><div id="j_idt47" class="ui-messages ui-widget" aria-live="polite"></div>]]></update><update id="idFormConsultaParametrizada"><![CDATA[
+<form id="idFormConsultaParametrizada" name="idFormConsultaParametrizada" method="post" action="/dgp/faces/consulta/consulta_parametrizada.jsf" class="form-horizontal box-form" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="idFormConsultaParametrizada" value="idFormConsultaParametrizada" />
+ 
+			
+			
+			<div id="idFormConsultaParametrizada:confirmarGerarRelatorioDialog" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow modal"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="idFormConsultaParametrizada:confirmarGerarRelatorioDialog_title" class="ui-dialog-title">Atenção</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content">
+	        <br />
+			<p style="margin-left: 30px;">A quantidade de registros a serem exportados é muito grande. Isso poderá ocasionar lentidão no sistema. Deseja prosseguir com a exportação?</p>
+			<br />
+			<div class="modal-footer"><button id="idFormConsultaParametrizada:btnSimGerarRelatorio" name="idFormConsultaParametrizada:btnSimGerarRelatorio" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn btnCorrigiPadding btn-primary ui-state-highlight" onclick="iniciarVerificacaoExportacao();confirmarGerarRelatorioDialogVar.hide();" type="submit"><span class="ui-button-icon-left ui-icon ui-c ui-icon-check"></span><span class="ui-button-text ui-c">Sim</span></button><script id="idFormConsultaParametrizada:btnSimGerarRelatorio_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_idFormConsultaParametrizada_btnSimGerarRelatorio',{id:'idFormConsultaParametrizada:btnSimGerarRelatorio'});</script><button id="idFormConsultaParametrizada:btnNaoGerarRelatorio" name="idFormConsultaParametrizada:btnNaoGerarRelatorio" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn btnCorrigiPadding" onclick="confirmarGerarRelatorioDialogVar.hide();PrimeFaces.ab({source:'idFormConsultaParametrizada:btnNaoGerarRelatorio'});return false;" title="Cancelar" type="submit"><span class="ui-button-icon-left ui-icon ui-c ui-icon-closethick"></span><span class="ui-button-text ui-c">Não</span></button><script id="idFormConsultaParametrizada:btnNaoGerarRelatorio_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_idFormConsultaParametrizada_btnNaoGerarRelatorio',{id:'idFormConsultaParametrizada:btnNaoGerarRelatorio'});</script>
+	    	</div></div></div><script id="idFormConsultaParametrizada:confirmarGerarRelatorioDialog_s" type="text/javascript">$(function(){PrimeFaces.cw('Dialog','confirmarGerarRelatorioDialogVar',{id:'idFormConsultaParametrizada:confirmarGerarRelatorioDialog',resizable:false,modal:true,width:'600'});});</script><span id="idFormConsultaParametrizada:resultadoConsultaContainer"><div id="idFormConsultaParametrizada:resultadoDataList" class="ui-datalist ui-widget listaSemBorda"><div id="idFormConsultaParametrizada:resultadoDataList_content" class="ui-datalist-content ui-widget-content"><ul id="idFormConsultaParametrizada:resultadoDataList_list" class="ui-datalist-data"><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls">
+<script type="text/javascript" src="/dgp/javax.faces.resource/jsf.js.jsf?ln=javax.faces"></script>
+<a id="idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Administração e Extensão Rural</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider1'},'_blank');return false">Gustavo Bastos Braga</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:0:idBtnVisualizarEspelhoLider2'},'_blank');return false">Altair Dias de Moura</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Administração
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Administração Pública e Gestão Social</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider1'},'_blank');return false">Marilene de Souza Campos</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:1:idBtnVisualizarEspelhoLider2'},'_blank');return false"></a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Administração
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Administração Rural e Derivativos Agropecuários</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider1'},'_blank');return false">Janderson Damaceno dos Reis</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:2:idBtnVisualizarEspelhoLider2'},'_blank');return false">Pablo Murta Baião Albino</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Economia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Adubação, Nutrição e Fisiologia de Plantas Estimuladas por Substâncias Húmicas e, ou, Bactérias Promotoras de Crescimento</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider1'},'_blank');return false">Marihus Altoé Baldotto</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:3:idBtnVisualizarEspelhoLider2'},'_blank');return false">Lílian Estrela Borges Baldotto</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Agricultura Digital</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider1'},'_blank');return false">Daniel Marcal de Queiroz</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:4:idBtnVisualizarEspelhoLider2'},'_blank');return false">Francisco de Assis de Carvalho Pinto</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Engenharia Agrícola
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Agroambiental</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider1'},'_blank');return false">Diego Antonio França de Freitas</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:5:idBtnVisualizarEspelhoLider2'},'_blank');return false">Adélia Aziz Alexandre Pozza</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Agroecologia</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider1'},'_blank');return false">Ricardo Henrique Silva Santos</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:6:idBtnVisualizarEspelhoLider2'},'_blank');return false">Teógenes Senna de Oliveira</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Agroenergia</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider1'},'_blank');return false">Luiz Antônio dos Santos Dias</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:7:idBtnVisualizarEspelhoLider2'},'_blank');return false">Márcio Henrique Pereira Barbosa</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Agroquímicos com Atividade Fungicida</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider1'},'_blank');return false">Mayura Marques Magalhães Rubinger</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:8:idBtnVisualizarEspelhoLider2'},'_blank');return false"></a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Química
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Algebra e Matematica Aplicada</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider1'},'_blank');return false">Marines Guerreiro</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:9:idBtnVisualizarEspelhoLider2'},'_blank');return false">Sônia Maria Fernandes</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Matemática
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoGrupo'},'_blank');return false">ALGORITMOS E OTIMIZAÇÃO COMBINATÓRIA</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider1'},'_blank');return false">José Elias Claudio Arroyo</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:10:idBtnVisualizarEspelhoLider2'},'_blank');return false">Andre Gustavo dos Santos</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Ciência da Computação
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Alterações de propriedades físicas, químicas e biológicas em solos sob diferentes sistemas de manejo</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider1'},'_blank');return false">Teógenes Senna de Oliveira</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:11:idBtnVisualizarEspelhoLider2'},'_blank');return false">Raphael Bragança Alves Fernandes</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Ambiência e Instalações na Produção Animal</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider1'},'_blank');return false">Ilda de Fátima Ferreira Tinôco</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:12:idBtnVisualizarEspelhoLider2'},'_blank');return false">Fernanda Campos de Sousa</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Engenharia Agrícola
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoGrupo'},'_blank');return false">ANÁLISE E SÍNTESE DE AGROQUÍMICOS</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider1'},'_blank');return false">Luiz Cláudio de Almeida Barbosa</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:13:idBtnVisualizarEspelhoLider2'},'_blank');return false">Antonio Jacinto Demuner</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Química
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Análise Econômica Quantitativa</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider1'},'_blank');return false">Leonardo Bornacki de Mattos</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:14:idBtnVisualizarEspelhoLider2'},'_blank');return false">Wilson da Cruz Vieira</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Economia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoGrupo'},'_blank');return false">ANÁLISE NUMÉRICA DO COMPORTAMENTO NÃO LINEAR DE ESTRUTURAS</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider1'},'_blank');return false">Marilia Gonçalves Marques</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:15:idBtnVisualizarEspelhoLider2'},'_blank');return false"></a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Engenharia Civil
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Análise Sensorial de Alimentos</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider1'},'_blank');return false">Valeria Paula Rodrigues Minim</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:16:idBtnVisualizarEspelhoLider2'},'_blank');return false"></a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Ciência e Tecnologia de Alimentos
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Anatomia Vegetal Aplicada</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider1'},'_blank');return false">Renata Maria Strozi Alves Meira</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:17:idBtnVisualizarEspelhoLider2'},'_blank');return false">Aristéa Alves Azevedo</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Botânica
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Aprendizagem transformadora em ecologia</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider1'},'_blank');return false">Carlos Frankl Sperber</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:18:idBtnVisualizarEspelhoLider2'},'_blank');return false"></a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Ecologia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoGrupo'},'_blank');return false">AquaUFV</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider1'},'_blank');return false">Rodrigo Fortes da Silva</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:19:idBtnVisualizarEspelhoLider2'},'_blank');return false">Leandro Santos Costa</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Recursos Pesqueiros e Engenharia de Pesca
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoGrupo'},'_blank');return false">ARQMnese - Percepção e Memória do Espaço Construído</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider1'},'_blank');return false">Luciana Bosco e Silva</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:20:idBtnVisualizarEspelhoLider2'},'_blank');return false">Marilia Solfa</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Arquitetura e Urbanismo
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Artes da Cena Contemporânea: corporeidade, educação e política</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider1'},'_blank');return false">Andréa Bergallo Snizek</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:21:idBtnVisualizarEspelhoLider2'},'_blank');return false">Rosana Aparecida Pimenta</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Artes
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoGrupo'},'_blank');return false">ASSOCIAÇÕES BIOLÓGICAS: PLANTA-MICRO-ORGANISMO</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider1'},'_blank');return false">Marliane de Cássia Soares da Silva</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:22:idBtnVisualizarEspelhoLider2'},'_blank');return false">Maria Catarina Megumi Kasuya</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Agronomia
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Ateliê - Grupo de Estudo e Pesquisa em Metodologias de Ensino e Formação de Professores de Ciências</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider1'},'_blank');return false">Rafael Gustavo Rigolon da Silva</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:23:idBtnVisualizarEspelhoLider2'},'_blank');return false">Thiago Mendonça</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Educação
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li><li class="ui-datalist-item">
+					
+						
+						<div class="itemConsulta">
+								
+								<div class="control-group"><label class="control-label">
+Grupo de pesquisa:</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoGrupo" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoGrupo':'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoGrupo'},'_blank');return false">Atividade física: saúde e performance</a>
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Instituição:</label>
+									<div class="controls">UFV
+									</div>
+								</div>
+								
+								<div class="control-group"><label class="control-label">
+Líder(es):</label>
+									<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider1" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider1':'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider1'},'_blank');return false">Antônio José Natali</a>
+									</div>
+								</div>
+									<div class="control-group">
+										<div class="controls"><a id="idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider2" href="#" style="width:16%" onclick="mojarra.jsfcljs(document.getElementById('idFormConsultaParametrizada'),{'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider2':'idFormConsultaParametrizada:resultadoDataList:24:idBtnVisualizarEspelhoLider2'},'_blank');return false">João Carlos Bouzas Marins</a>
+										</div>
+									</div>
+								
+								<div class="control-group"><label class="control-label">
+Área:</label>
+									<div class="controls">Educação Física
+									</div>
+								</div>
+						</div>
+						
+							
+							
+							</li></ul></div><div id="idFormConsultaParametrizada:resultadoDataList_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom"><span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span><span class="ui-paginator-page ui-state-default ui-corner-all">2</span><span class="ui-paginator-page ui-state-default ui-corner-all">3</span><span class="ui-paginator-page ui-state-default ui-corner-all">4</span><span class="ui-paginator-page ui-state-default ui-corner-all">5</span><span class="ui-paginator-page ui-state-default ui-corner-all">6</span><span class="ui-paginator-page ui-state-default ui-corner-all">7</span><span class="ui-paginator-page ui-state-default ui-corner-all">8</span><span class="ui-paginator-page ui-state-default ui-corner-all">9</span><span class="ui-paginator-page ui-state-default ui-corner-all">10</span></span><span class="ui-paginator-next ui-state-default ui-corner-all"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all"><span class="ui-icon ui-icon-seek-end">p</span></span><select class="ui-paginator-rpp-options ui-widget ui-state-default ui-corner-left" value="25"><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option></select><span class="ui-paginator-current">Total de registros: 403</span></div></div><script id="idFormConsultaParametrizada:resultadoDataList_s" type="text/javascript">PrimeFaces.cw('DataList','widget_idFormConsultaParametrizada_resultadoDataList',{id:'idFormConsultaParametrizada:resultadoDataList',paginator:{id:['idFormConsultaParametrizada:resultadoDataList_paginator_bottom'],rows:25,rowCount:403,page:0,currentPageTemplate:'Total de registros: {totalRecords}'}});</script>
+				<script>
+
+					$(function(){
+						setInterval("manterSessao()", 120000);
+					})
+				 
+				</script><script type="text/javascript">manterSessao = function() {PrimeFaces.ab({source:'idFormConsultaParametrizada:j_idt251',formId:'idFormConsultaParametrizada',global:false,params:arguments[0]});}</script><script type="text/javascript">verificarExportacaoReport = function() {PrimeFaces.ab({source:'idFormConsultaParametrizada:j_idt252',formId:'idFormConsultaParametrizada',process:'idFormConsultaParametrizada:j_idt252',global:false,oncomplete:function(xhr,status,args){verificarExportacaoReportCallback(args);},params:arguments[0]});}</script>
+				
+				<div class="form-actions no-print"><button id="idFormConsultaParametrizada:j_idt254" name="idFormConsultaParametrizada:j_idt254" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn btn-primary ui-state-highlight btnCorrigiPadding" onclick="PrimeFaces.ab({source:'idFormConsultaParametrizada:j_idt254',global:false,oncomplete:function(xhr,status,args){print();;}});return false;" type="submit"><span class="ui-button-icon-left ui-icon ui-c ui-icon-print"></span><span class="ui-button-text ui-c">Imprimir</span></button><script id="idFormConsultaParametrizada:j_idt254_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_idFormConsultaParametrizada_j_idt254',{id:'idFormConsultaParametrizada:j_idt254'});</script><button id="idFormConsultaParametrizada:j_idt255" name="idFormConsultaParametrizada:j_idt255" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn btnCorrigiPadding" onclick="PrimeFaces.ab({source:'idFormConsultaParametrizada:j_idt255',global:false,oncomplete:function(xhr,status,args){validaExportacaoRelatorio(args);}});return false;" type="submit"><span class="ui-button-icon-left ui-icon ui-c ui-icon-document"></span><span class="ui-button-text ui-c">Exportar</span></button><script id="idFormConsultaParametrizada:j_idt255_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_idFormConsultaParametrizada_j_idt255',{id:'idFormConsultaParametrizada:j_idt255'});</script><button id="idFormConsultaParametrizada:botaoDownload" name="idFormConsultaParametrizada:botaoDownload" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btn btnCorrigiPadding" onclick="iniciarVerificacaoExportacao();;" style="visibility: hidden;" type="submit"><span class="ui-button-icon-left ui-icon ui-c ui-icon-document"></span><span class="ui-button-text ui-c">ui-button</span></button><script id="idFormConsultaParametrizada:botaoDownload_s" type="text/javascript">PrimeFaces.cw('CommandButton','botaoDownloadVar',{id:'idFormConsultaParametrizada:botaoDownload'});</script><button id="idFormConsultaParametrizada:j_idt256" name="idFormConsultaParametrizada:j_idt256" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btnCorrigiPadding" type="submit"><span class="ui-button-text ui-c">Voltar</span></button><script id="idFormConsultaParametrizada:j_idt256_s" type="text/javascript">PrimeFaces.cw('CommandButton','widget_idFormConsultaParametrizada_j_idt256',{id:'idFormConsultaParametrizada:j_idt256'});</script>
+            	</div></span>
+</form>]]></update><update id="javax.faces.ViewState"><![CDATA[1257091378841138771:-8348622520805727170]]></update><extension ln="primefaces" type="args">{"totalRecords":403}</extension></changes></partial-response>
